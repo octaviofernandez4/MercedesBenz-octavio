@@ -1,0 +1,137 @@
+
+.tarjeta-mercedes {
+  width: 18rem;
+}
+body {
+  background-image: url('../assets/img/FONDONEGRO1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* =========================================
+   Contenedor General del Catálogo
+   ========================================= */
+main section {
+  padding: 50px 20px;
+ 
+}
+
+/* =========================================
+   Diseño de la Tarjeta (.tarjeta-mercedes)
+   ========================================= */
+
+/* =========================================
+   1. Contenedor Padre (La Tarjeta)
+   Aseguramos que nada se salga de aquí.
+   ========================================= */
+.tarjeta-mercedes {
+  /* ... tus otros estilos (background, blur, etc.) ... */
+  
+  /* IMPORTANTE: Esto corta cualquier cosa que intente salir de la tarjeta */
+  overflow: hidden !important; 
+  
+  /* Reforzamos los bordes redondeados para que el corte sea perfecto */
+  border-radius: 16px !important; 
+  
+  /* Mantenemos la transición suave por si acaso */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* =========================================
+   2. La Imagen (Estado Normal)
+   Preparamos la animación.
+   ========================================= */
+.tarjeta-mercedes img {
+  /* ... tus otros estilos (height, object-fit) ... */
+  
+  /* ESTO ES CLAVE: La transición debe estar AQUÍ para que al sacar el mouse también sea suave */
+  transition: transform 0.5s ease-in-out, filter 0.3s ease;
+  
+  /* Aseguramos que la imagen ocupe todo el ancho */
+  width: 100%;
+}
+
+/* =========================================
+   3. Hover SOLO en la Foto
+   Efecto de zoom "hacia adentro".
+   ========================================= */
+.tarjeta-mercedes img:hover {
+  /* Hace un zoom del 10%. Al tener overflow:hidden en el padre, se ve 'hacia adentro' */
+  transform: scale(1.1); 
+  
+  /* Opcional: Un pequeño aumento de brillo para resaltar */
+  filter: brightness(1.1); 
+  
+  cursor: pointer;
+}
+
+/* =========================================
+   Cuerpo de la Tarjeta y ORDENAMIENTO (La Magia)
+   ========================================= */
+.tarjeta-mercedes .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  /* El z-index asegura que el texto quede por encima de la imagen al hacer zoom */
+  position: relative; 
+  z-index: 2;
+  background: linear-gradient(to top, rgba(30,30,30, 1) 40%, rgba(30,30,30, 0.8));
+}
+
+/* 1. Título */
+.tarjeta-mercedes .card-title {
+  order: 1; /* Primer lugar */
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 2. Botón de Más Información */
+.tarjeta-mercedes .btn {
+  order: 2; /* Segundo lugar */
+  background: transparent !important;
+  color: #ffffff !important; /* Texto azul eléctrico */
+  border: 2px solid #ffffff !important;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px; /* Separación con la descripción que va abajo */
+  text-align: center;
+}
+
+/* Hover del botón */
+.tarjeta-mercedes .btn:hover {
+  background: #ff0000 !important;
+  color: #000000 !important;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* 3. Descripción Breve */
+.tarjeta-mercedes .card-text {
+  order: 3; /* Tercer lugar */
+  color: #aaaaaa;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+/* Ajuste para las tarjetas que no tienen descripción (para que el botón no quede flotando) */
+.tarjeta-mercedes .card-text:empty {
+  display: none;
+}
+
+
+
+
