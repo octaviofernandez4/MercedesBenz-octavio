@@ -21,6 +21,25 @@ body {
   align-items: center;
   justify-content: center;
 }
+.hero-imagen2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 520px;
+  background-image: url('../assets/img/SF2-GLE-HP-L-V2.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero-imagen2__panel {
+  max-width: 480px;
+  margin-left: 8%;
+  background: rgba(245, 245, 243, 0.72);
+  backdrop-filter: blur(6px);
+  padding: 2.5rem 2.5rem 2.5rem 2rem;
+}
 
 /* Capa oscura para que el texto se lea bien sobre la foto */
 .hero-overlay {
