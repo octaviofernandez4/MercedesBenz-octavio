@@ -161,16 +161,6 @@
   transform: scale(1.2);
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-  .slider__card {
-    flex: 0 0 100%;
-  }
-  
-  .slider__nav {
-    display: none;
-  }
-}
 /* =========================================
    SECCIÓN: LEGALES Y ACCIONES
 ========================================= */
@@ -258,15 +248,3 @@
   margin: 0;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-  .acciones-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .acciones-grid {
-    grid-template-columns: 1fr;
-  }
-}
