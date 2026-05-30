@@ -174,3 +174,57 @@ section p:last-child {
     padding: 25px;
   }
 }
+
+.galeria-cuadricula {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px; 
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
+.galeria-cuadricula div {
+  width: 100%;
+  margin: 0; 
+  aspect-ratio: 1 / 1; 
+}
+
+.cardFunko {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px; 
+  filter: grayscale(100%);
+  border: 4px solid transparent; 
+  transition: transform 0.4s ease, filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.cardFunko:hover {
+  transform: scale(1.50); 
+  filter: grayscale(0%); 
+  box-shadow: 18px 18px 22px #d32f2f, 18px 18px 22px #d32f2f;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 992px) {
+  .galeria-cuadricula {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 576px) {
+  .galeria-cuadricula {
+    grid-template-columns: 1fr; 
+  }
+}
+
+body {
+  background-image: url('../assets/img/FONDONEGRO1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
