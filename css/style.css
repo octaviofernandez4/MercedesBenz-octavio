@@ -5,16 +5,16 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
 /* =========================================
    Hero Section (Imagen Full Screen)
    ========================================= */
 .hero {
-  /* Sustituye la ruta por tu imagen principal */
   background-image: url('../assets/img/Mercedes140AÑOS.avif');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Opcional: crea un efecto de profundidad al scrollear */
-  height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+  background-attachment: fixed;
+  height: 100vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -22,29 +22,54 @@ body {
   justify-content: center;
 }
 
-/* Capa oscura para que el texto se lea bien sobre la foto */
+.hero-imagen2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 520px;
+  background-image: url('../assets/img/SF2-GLE-HP-L-V2.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero-imagen2__panel {
+  max-width: 480px;
+  margin-left: 8%;
+  background: rgba(245, 245, 243, 0.72);
+  backdrop-filter: blur(6px);
+  padding: 2.5rem 2.5rem 2.5rem 2rem;
+}
+
+/* =========================================
+   Reemplaza la clase hero-overlay
+   ========================================= */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Ajusta el 0.5 para más o menos oscuridad */
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
-  justify-content: center;
- 
+  justify-content: flex-start;
+  padding: 0 8%;
+  box-sizing: border-box;
 }
 
+/* =========================================
+   Reemplaza la clase hero-content
+   ========================================= */
 .hero-content {
-  text-align: center;
+  text-align: left;
   color: #ffffff;
-  padding: 0 20px;
-  max-width: 800px;
+  max-width: 700px;
 }
 
 .hero-titulo {
-  font-size: 4rem; /* Tamaño grande para impacto */
+  font-size: 4rem;
   text-transform: uppercase;
   font-weight: 800;
   margin-bottom: 10px;
@@ -63,7 +88,7 @@ body {
 .btn-principal {
   display: inline-block;
   padding: 15px 40px;
-  background-color: #d32f2f; /* Rojo AMG */
+  background-color: #d32f2f;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -77,37 +102,254 @@ body {
   transform: translateY(-3px);
 }
 
-/* Ajuste para celulares */
-@media (max-width: 768px) {
-  .hero-titulo {
-    font-size: 2.5rem;
-  }
-  .hero-descripcion {
-    font-size: 1.1rem;
-  }
+.hero-video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 520px;
+  /* ELIMINADO: overflow: hidden; (esto cortaba los botones) */
+  background: #0a0a0a;
 }
-/* =========================================
-   Reemplaza la clase hero-overlay
-   ========================================= */
-.hero-overlay {
+
+.hero-video__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden; /* AGREGADO: el video se corta aquí adentro sin afectar los botones */
+}
+
+.hero-video__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-video__toggle {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  z-index: 10;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.hero-video__toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #fff;
+}
+
+.hero-video__toggle .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.hero-video__panel {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2.5rem 3rem 3.5rem;
+  max-width: 540px;
+  background: rgba(245, 245, 243, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.hero-video__titulo {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 300;
+  line-height: 1.12;
+  color: #1a1a1a;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-video__descripcion {
+  font-size: clamp(0.875rem, 1.1vw, 1rem);
+  line-height: 1.65;
+  color: #3a3a3a;
+  margin: 0 0 2rem;
+  max-width: 420px;
+}
+
+.hero-video__acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  align-items: flex-start;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.btn--primario {
+  background: #0066cc;
+  color: #fff;
+  border: 2px solid #0066cc;
+}
+
+.btn--primario:hover {
+  background: #004fa3;
+  border-color: #004fa3;
+}
+
+.btn--secundario {
+  background: transparent;
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a;
+}
+
+.btn--secundario:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* --- TABS AL FINAL DEL HERO --- */
+.hero-tabs {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  z-index: 99; /* AUMENTADO: Garantiza que se vean por encima de las otras secciones */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hero-tab {
+  padding: 15px 40px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-decoration: none; /* Agregado para quitar la línea de enlace */
+  display: flex;         /* Agregado para que el texto quede bien centrado */
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-tab.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.hero-tab:not(.active) {
+  background-color: #fff;
+  color: #000;
+}
+
+/* --- SECCION RECOMENDACIONES --- */
+.recomendaciones {
+  padding: 80px 5% 60px;
+  background-color: #fff;
+  color: #000;
+}
+
+.recomendaciones__titulo {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.2rem;
+  font-weight: normal;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.recomendaciones__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card-auto {
+  position: relative;
+  height: 550px;
+  background-color: #f4f4f4;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-auto__img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center; /* Mantiene el contenido centrado verticalmente */
-  justify-content: flex-start; /* Empuja el contenido hacia la izquierda */
-  padding: 0 8%; /* Añade un margen lateral para que el texto no quede pegado al borde del monitor */
-  box-sizing: border-box; /* Asegura que el padding no deforme el tamaño del contenedor */
+  object-fit: cover;
+  z-index: 1;
 }
 
-/* =========================================
-   Reemplaza la clase hero-content
-   ========================================= */
-.hero-content {
-  text-align: left; /* Alinea los textos internamente a la izquierda */
-  color: #ffffff;
-  max-width: 700px; /* Limitamos un poco el ancho para que el texto no sea demasiado largo de leer */
+.card-auto__content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 30px 30px;
+  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0) 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card-auto__tag {
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+.card-auto__nombre {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.card-auto__acciones {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-azul {
+  background-color: #0078d6;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-azul:hover {
+  background-color: #005bb5;
+}
+
+.link-blanco {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.link-blanco:hover {
+  opacity: 0.8;
 }
