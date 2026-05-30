@@ -171,3 +171,102 @@
     display: none;
   }
 }
+/* =========================================
+   SECCIÓN: LEGALES Y ACCIONES
+========================================= */
+
+/* Ahora la sección principal ocupa el 100% de la pantalla para tapar el fondo */
+.legales-y-acciones {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 4rem 2rem 6rem 2rem; 
+  box-sizing: border-box;
+}
+
+/* Le aplicamos el límite de ancho y el centrado solo al contenido interno */
+.aviso-legal,
+.acciones-grid {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- AVISO LEGAL --- */
+.aviso-legal {
+  margin-bottom: 4rem;
+}
+
+.aviso-legal p {
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+}
+
+.aviso-legal strong {
+  color: #333333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* --- GRILLA DE ACCIONES --- */
+.acciones-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.accion-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 3rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  border-bottom: 3px solid transparent;
+  transition: background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.accion-card:hover {
+  background-color: #e9ecef;
+  border-bottom-color: #0078d6;
+}
+
+.accion-icon {
+  width: 24px;
+  height: 24px;
+  color: #333333;
+  margin-bottom: 1.5rem;
+}
+
+.accion-titulo {
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 0.8rem;
+}
+
+.accion-descripcion {
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .acciones-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .acciones-grid {
+    grid-template-columns: 1fr;
+  }
+}
