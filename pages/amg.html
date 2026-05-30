@@ -135,12 +135,66 @@
                     </p>
                     <a href="#" class="btn-azul">Descubrir la historia</a>
                 </div>
-                <div class="adn-amg__imagen-wrapper">
-                    <!-- Asegurate de tener la imagen con este nombre en tu carpeta img -->
+                <div class="adn-amg__imagen-wrapper">                 
                     <img src="../assets/img/AMG POSTER.jpg" alt="Póster Filosofía AMG" class="adn-amg__poster">
                 </div>
             </div>
         </section>
+<section class="mundo-amg">
+    <div class="mundo-amg__fila">
+        <div class="mundo-amg__texto-container">
+            <h2 class="mundo-amg__titulo">E PERFORMANCE.</h2>
+            <p class="mundo-amg__descripcion">Te damos la bienvenida a una nueva dimensión de deportividad. En los nuevos modelos Mercedes-AMG E PERFORMANCE, las tecnologías del automovilismo, la movilidad eléctrica y conceptos únicos se dan la mano de forma fascinante.</p>
+            <a href="#" class="btn-rojo-amg">Más información</a>
+        </div>
+        <div class="mundo-amg__imagen-container">
+            <img src="../assets/img/Seccion imagen AMG 1.jpg" alt="Motor E Performance" id="img-performance" class="mundo-amg__img" data-index="0">
+            
+            <button class="btn-cambiar-img" onclick="cambiarImagen('img-performance', [
+                '../assets/img/Seccion imagen AMG 1.jpg',
+                '../assets/img/pexels-czapp-arpad-3647289-11396006.jpg', 
+                '../assets/img/AMG 633333333.jpg',
+                '../assets/img/a626273e97b888a72ddc7e905eceb099.jpg',
+                '../assets/img/CarruselAMG2.jpg',
+                '../assets/img/CarruselAMG4.jpg',
+                '../assets/img/carruselAMG6.jpg',
+                '../assets/img/CarruselAMG7.jpg',
+                '../assets/img/CarruselAMG8.jpg',
+                '../assets/img/CarruselAMG9.jpg'
+            ])">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="mundo-amg__fila mundo-amg__fila--reversa">
+        <div class="mundo-amg__imagen-container">
+            <img src="../assets/img/Seccion imagen AMG 2.webp" alt="Mundo Mercedes-AMG" id="img-mundo" class="mundo-amg__img" data-index="0">
+            
+            <button class="btn-cambiar-img" onclick="cambiarImagen('img-mundo', [
+                '../assets/img/Seccion imagen AMG 2.webp',
+                '../assets/img/carruselamg10.jpg', 
+                '../assets/img/carruselamg12.jpg',
+                '../assets/img/carruselamg11.jpg',
+                '../assets/img/carruselamg15.jpg',
+                '../assets/img/carruselamg16.jpg',
+                '../assets/img/carruselamg17.jpg',
+                '../assets/img/carruselamg18.jpg',
+                '../assets/img/carruselamg19.jpg',
+                '../assets/img/carruselamg20.jpg',
+            ])">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </button>
+        </div>
+        <div class="mundo-amg__texto-container">
+            <h2 class="mundo-amg__titulo">El mundo Mercedes-AMG.</h2>
+            <p class="mundo-amg__descripcion">Donde la potencia, la intensidad y el dinamismo de conducción se combinan.</p>
+            <a href="#" class="btn-rojo-amg">Más información</a>
+        </div>
+    </div>
+</section>
+
+
         <!-- SECCIÓN LEGALES Y ACCIONES -->
         <section class="legales-y-acciones">
             <div class="aviso-legal">
@@ -279,7 +333,8 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
-    <script src="./js/index.js" defer></script>
+    <script src="../js/index.js" defer></script>
+    <script src="../js/amg.js" defer></script>
 </body>
 
 </html>

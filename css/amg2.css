@@ -77,3 +77,148 @@
     justify-content: center;
   }
 }
+/* =========================================
+   SECCIÓN: MUNDO AMG (Zig-Zag Interactivo)
+========================================= */
+.mundo-amg {
+  background-color: #000000;
+  width: 100%;
+  padding: 80px 5%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 100px; /* Espacio entre las dos filas */
+}
+
+.mundo-amg__fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Para invertir el orden en la segunda fila */
+.mundo-amg__fila--reversa {
+  flex-direction: row;
+}
+
+.mundo-amg__texto-container {
+  flex: 1;
+  max-width: 500px;
+}
+
+.mundo-amg__titulo {
+  font-family: sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.mundo-amg__descripcion {
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #dddddd;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Botón Rojo Específico (Como en la foto) */
+.btn-rojo-amg {
+  background-color: #b30000;
+  color: #ffffff;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-rojo-amg:hover {
+  background-color: #8a0000;
+}
+
+/* Contenedor de la Imagen */
+.mundo-amg__imagen-container {
+  flex: 1.2; /* Ocupa un poco más de espacio que el texto */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* La Imagen Principal */
+.mundo-amg__img {
+  width: 100%;
+  max-width: 550px;
+  
+  /* EL CAMBIO ESTÁ ACÁ: Reemplazamos 'height: auto;' por una proporción fija */
+  aspect-ratio: 16 / 10; 
+  
+  object-fit: cover; /* Esto es clave para que el auto no se deforme */
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+/* EFECTO HOVER: Expansión y Resplandor Rojo */
+.mundo-amg__imagen-container:hover .mundo-amg__img {
+  transform: scale(1.10);
+  border-color: #b30000;
+  box-shadow: 0 0 70px rgba(179, 0, 0, 0.6), inset 0 0 15px rgba(179, 0, 0, 0.2);
+}
+
+/* Botón flotante para cambiar la imagen (aparece en hover) */
+.btn-cambiar-img {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #b30000;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0; /* Oculto por defecto */
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  z-index: 5;
+}
+
+.btn-cambiar-img svg {
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+}
+
+.btn-cambiar-img:hover {
+  background-color: #b30000;
+}
+
+/* Muestra el botón cuando el mouse está sobre el contenedor de la imagen */
+.mundo-amg__imagen-container:hover .btn-cambiar-img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive para pantallas chicas */
+@media (max-width: 900px) {
+  .mundo-amg__fila,
+  .mundo-amg__fila--reversa {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .mundo-amg__img {
+    max-width: 100%;
+  }
+}
