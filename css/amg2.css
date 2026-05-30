@@ -1,0 +1,79 @@
+/* =========================================
+   SECCIÓN: ADN AMG (Póster)
+========================================= */
+.adn-amg {
+  background-color: #000000;
+  padding: 100px 5%;
+  width: 100%;
+  box-sizing: border-box;
+  /* Una línea muy sutil arriba para separarlo del Hero */
+  border-top: 1px solid #1a1a1a; 
+}
+
+.adn-amg__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  justify-content: space-between;
+}
+
+.adn-amg__texto {
+  flex: 1;
+  max-width: 500px;
+}
+
+.adn-amg__titulo {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3.5rem;
+  font-weight: normal;
+  color: #ffffff;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.adn-amg__descripcion {
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  color: #aaaaaa;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.adn-amg__imagen-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.adn-amg__poster {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  /* Un resplandor sutil para que despegue del fondo negro */
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.03), 0 0 30px rgba(179, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.adn-amg__poster:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.05), 0 0 40px rgba(179, 0, 0, 0.25);
+}
+
+/* Responsive para que se vea bien en celulares y tablets */
+@media (max-width: 900px) {
+  .adn-amg__container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+  
+  .adn-amg__texto {
+    max-width: 100%;
+  }
+  
+  .adn-amg__imagen-wrapper {
+    justify-content: center;
+  }
+}

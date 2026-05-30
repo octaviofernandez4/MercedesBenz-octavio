@@ -13,7 +13,7 @@ body {
    Hero Section (Imagen Full Screen)
    ========================================= */
 .hero {
-  background-image: url('../assets/img/GLC\ AMG\ NUEVAAA.jpg');
+  background-image: url('../assets/img/mercedes-amg-e63-final-edition_98.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -234,30 +234,46 @@ body {
   transform: translate(-50%, 50%);
   display: flex;
   z-index: 99; 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  /* Un pequeño borde exterior sutil para contener los botones */
+  border: 1px solid #555555;
 }
 
 .hero-tab {
-  padding: 15px 40px;
-  border: none;
-  font-size: 14px;
-  font-weight: bold;
+  width: 180px; /* Ancho fijo para que ambos botones sean idénticos */
+  height: 55px; /* Alto del botón */
+  font-family: 'Times New Roman', Times, serif; /* Tipografía elegante como en la foto */
+  font-size: 16px;
   cursor: pointer;
-  letter-spacing: 1px;
   text-decoration: none; 
   display: flex;        
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
+/* Pestaña ACTIVA (Blanco) */
 .hero-tab.active {
-  background-color: #000;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
 }
 
+/* Pestaña INACTIVA (Gris oscuro mate) */
 .hero-tab:not(.active) {
-  background-color: #fff;
-  color: #000;
+  background-color: #3b3b3b; 
+  color: #ffffff;
+}
+
+.hero-tab:not(.active):hover {
+  background-color: #4f4f4f; /* Se aclara apenitas al pasar el mouse */
+}
+
+/* Imagen del logo AMG adentro del botón */
+.hero-tab__img {
+  height: 94px; /* Ajustá este número si querés el logo más grande o más chico */
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* =========================================
@@ -558,13 +574,13 @@ body {
 /* =========================================
    SECCIÓN: LEGALES Y ACCIONES
 ========================================= */
-
 .legales-y-acciones {
-  background-color: #000000; /* Ahora el fondo también es negro aquí */
+  background-color: #000000; 
   width: 100%;
-  padding: 4rem 2rem 6rem 2rem; 
+  padding: 4rem 2rem 120px 2rem; /* AUMENTADO: de 6rem a 120px para separar del footer */
   box-sizing: border-box;
 }
+
 
 .aviso-legal,
 .acciones-grid {
