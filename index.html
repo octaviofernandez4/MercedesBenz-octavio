@@ -16,6 +16,7 @@
 
   <!-- ESTILOS -->
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style2.css" />
   <link rel="stylesheet" href="./css/navbar.css">
   <link rel="stylesheet" href="./css/footer.css" />
 
@@ -176,6 +177,86 @@
         </article>
       </div>
     </section>
+
+    <section class="servicios-al-cliente">
+  <h2 class="servicios-al-cliente__titulo">Servicios al Cliente</h2>
+  
+  <div class="servicios-al-cliente__slider slider">
+    
+    <div class="slider__window">
+      <div class="slider__wrapper" id="sliderWrapper">
+        
+        <article class="slider__card card-servicio">
+          <img src="./assets/img/servicio cliente 1.avif" alt="Interior de vehículo Mercedes-Benz con pantalla" class="card-servicio__img">
+          <div class="card-servicio__content">
+            <h3 class="card-servicio__subtitulo">Extras Digitales</h3>
+            <p class="card-servicio__descripcion">Activá Extras Digitales para disfrutar tu Mercedes-Benz de una nueva manera.</p>
+            <a href="#" class="btn-servicio">Más información</a>
+          </div>
+        </article>
+        
+        <article class="slider__card card-servicio">
+          <img src="./assets/img/servicio cliente 2.avif" alt="Mujer con teléfono móvil y Mercedes-Benz SUV" class="card-servicio__img">
+          <div class="card-servicio__content">
+            <h3 class="card-servicio__subtitulo">Turnos Online</h3>
+            <p class="card-servicio__descripcion">Reservá online tu próximo servicio.</p>
+            <a href="#" class="btn-servicio">Reservar turno</a>
+          </div>
+        </article>
+
+        <article class="slider__card card-servicio">
+          <img src="./assets/img/servicio cliente 3.avif" alt="Asistencia en ruta Mercedes-Benz" class="card-servicio__img">
+          <div class="card-servicio__content">
+            <h3 class="card-servicio__subtitulo">Repuestos Originales</h3>
+            <p class="card-servicio__descripcion">Estos repuestos están respaldados por Mercedes-Benz y se desarrollan específicamente para tu vehículo.</p>
+            <a href="#" class="btn-servicio">Más información</a>
+          </div>
+        </article>
+
+        <article class="slider__card card-servicio">
+          <img src="./assets/img/servicio cliente 4.avif" alt="Accesorios originales Mercedes-Benz" class="card-servicio__img">
+          <div class="card-servicio__content">
+            <h3 class="card-servicio__subtitulo">Servicios</h3>
+            <p class="card-servicio__descripcion">Descubrí todos nuestros servicios para tu vehículo y mucho más.</p>
+            <a href="#" class="btn-servicio">Catálogo online</a>
+          </div>
+        </article>
+
+        <article class="slider__card card-servicio">
+          <img src="./assets/img/servicio cliente 5.avif" alt="Garantía extendida" class="card-servicio__img">
+          <div class="card-servicio__content">
+            <h3 class="card-servicio__subtitulo">Garantía Extendida</h3>
+            <p class="card-servicio__descripcion">Protegé tu inversión y extendé la cobertura de tu vehículo para viajar con total seguridad.</p>
+            <a href="#" class="btn-servicio">Conocer más</a>
+          </div>
+        </article>
+
+        <article class="slider__card card-servicio">
+          <img src="./assets/img/servicio cliente 6.avif" alt="Planes de mantenimiento" class="card-servicio__img">
+          <div class="card-servicio__content">
+            <h3 class="card-servicio__subtitulo">Planes de Mantenimiento</h3>
+            <p class="card-servicio__descripcion">Asegurá el rendimiento óptimo de tu Mercedes-Benz con nuestros planes preventivos.</p>
+            <a href="#" class="btn-servicio">Ver planes</a>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+    
+    <button class="slider__nav slider__nav--next" id="btnNext" aria-label="Siguiente">
+      <svg class="icon icon-arrow" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor"/>
+        <path d="M10 8l4 4-4 4" fill="none" stroke="currentColor" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  
+  <div class="slider__pagination">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
 </main>
 
   <footer class="footer" role="contentinfo">
@@ -266,34 +347,11 @@
 
   </footer>
 
-  <script>
-    (function () {
-      const btn   = document.getElementById('videoToggle');
-      const video = document.getElementById('heroVideo');
-      if (!btn || !video) return;
-
-      const iconPause = btn.querySelector('.icon-pause');
-      const iconPlay  = btn.querySelector('.icon-play');
-
-      btn.addEventListener('click', function () {
-        if (video.paused) {
-          video.play();
-          iconPause.style.display = '';
-          iconPlay.style.display  = 'none';
-          btn.setAttribute('aria-label', 'Pausar video');
-        } else {
-          video.pause();
-          iconPause.style.display = 'none';
-          iconPlay.style.display  = '';
-          btn.setAttribute('aria-label', 'Reproducir video');
-        }
-      });
-    })();
-  </script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
 
+  <script src="./js/index.js" defer></script>
+</body>
 </body>
 </html>
