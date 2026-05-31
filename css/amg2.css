@@ -58,7 +58,7 @@
 
 .adn-amg__poster:hover {
   transform: scale(1.02);
-  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.05), 0 0 40px rgba(179, 0, 0, 0.25);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.05), 0 0 40px rgba(179, 0, 0, 0.592);
 }
 
 /* Responsive para que se vea bien en celulares y tablets */
@@ -168,7 +168,7 @@
 
 /* EFECTO HOVER: Expansión y Resplandor Rojo */
 .mundo-amg__imagen-container:hover .mundo-amg__img {
-  transform: scale(1.10);
+  transform: scale(1.45);
   border-color: #b30000;
   box-shadow: 0 0 70px rgba(179, 0, 0, 0.6), inset 0 0 15px rgba(179, 0, 0, 0.2);
 }
