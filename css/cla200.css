@@ -131,11 +131,88 @@
   margin: 0;
 }
 
-/* --- Responsive --- 
-   Si se ve en celulares, pasamos a 1 sola columna para que no quede aplastado */
-@media (max-width: 768px) {
-  .features-grid {
+
+/* Contenedor de la sección de especificaciones */
+.specs-section {
+  padding: 60px 5%;
+  background-color: #ffffff;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Grilla de 4 columnas */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: end; /* Alinea todo hacia abajo para que los números queden en la misma línea */
+}
+
+/* Cada bloque de información */
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Texto pequeño arriba (solo lo usa "Aceleración en") */
+.spec-label-top {
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+/* El número grande */
+.spec-value {
+  font-family: "Times New Roman", Times, serif; /* Tipografía serif estilo Mercedes */
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: baseline; /* Alinea la base del número con la letra pequeña */
+  gap: 5px;
+}
+
+/* La unidad de medida (CV, Nm, s, km/h) */
+.spec-value span {
+  font-size: 1.5rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* La etiqueta de abajo (Potencia, par motor, etc.) */
+.spec-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #000000;
+}
+
+/* El supraíndice [b] */
+.spec-label sup {
+  font-size: 0.6rem;
+  margin-left: 2px;
+}
+
+/* Texto legal del final */
+.specs-disclaimer {
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #767676; /* Un gris más sutil para que no resalte tanto */
+  margin-top: 60px;
+}
+@media (max-width: 900px) {
+  .specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+}
+
+/* En celulares, pasa a 1 sola columna */
+@media (max-width: 500px) {
+  .specs-grid {
     grid-template-columns: 1fr;
-    gap: 50px; /* Un poco más de espacio vertical entre bloques en mobile */
+    gap: 30px;
   }
 }
