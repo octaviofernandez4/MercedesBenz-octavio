@@ -1,0 +1,179 @@
+
+body {
+  background-image: url('../assets/img/FONDONEGRO1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero {
+  background-image: url('../assets/img/ASESORATE\ 1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-titulo {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-descripcion {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+  color: #e0e0e0;
+}
+.hero-content {
+  text-align: left;
+  color: #ffffff;
+  max-width: 700px;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+  box-sizing: border-box;
+}
+/* =========================================
+   SECCIÓN: AYUDA Y CONTACTO
+========================================= */
+.ayuda-contacto {
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    font-family: sans-serif;
+}
+
+.contenedor-ayuda {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ayuda-titulo {
+    font-family: 'Times New Roman', Times, serif; /* Tipografía estilo Mercedes */
+    font-size: 2.2rem;
+    font-weight: normal;
+    color: #333333;
+    margin-bottom: 3rem;
+}
+
+.ayuda-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+}
+
+.ayuda-card {
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6; /* Borde muy sutil similar a la captura */
+    height: 200px; /* Altura fija para que todas queden parejas */
+    transition: box-shadow 0.3s ease;
+}
+
+.ayuda-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.ayuda-img-box {
+    width: 35%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.ayuda-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ayuda-info {
+    width: 65%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.ayuda-card-titulo {
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #333333;
+    margin: 0 0 0.5rem 0;
+}
+
+.ayuda-card-texto {
+    font-size: 0.9rem;
+    color: #666666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.ayuda-link {
+    color: #0066cc; /* Azul característico del link */
+    text-decoration: underline;
+}
+
+.ayuda-link:hover {
+    color: #004c99;
+}
+
+.ayuda-btn-flecha {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    color: #333333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.ayuda-btn-flecha:hover {
+    background-color: #f0f0f0;
+    border-color: #999999;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .ayuda-grid {
+        grid-template-columns: 1fr; /* 1 sola columna en móviles */
+    }
+    
+    .ayuda-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .ayuda-img-box {
+        width: 100%;
+        height: 180px;
+    }
+
+    .ayuda-info {
+        width: 100%;
+        padding-bottom: 4rem; /* Espacio para que el botón flotante no tape el texto */
+    }
+}
