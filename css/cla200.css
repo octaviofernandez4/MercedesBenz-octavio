@@ -1,0 +1,428 @@
+/* Borrá la regla del body con el FONDONEGRO1.jpg, ensucia el layout */
+
+.hero {
+  /* Le agregamos un gradiente negro a la izquierda a tu imagen para que el texto blanco resalte perfecto */
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 45%), url('../assets/img/cla200hero1.avif');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: flex-start; /* ESTO ES CLAVE: Alinea el contenido a la izquierda, no al centro */
+  padding-left: 12%; /* Empuja el texto hacia adentro para que no pegue en el borde */
+}
+
+/* Contenedor del texto y botón */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Separación entre el título y el botón */
+  z-index: 2;
+}
+
+.hero-title {
+  color: white;
+  font-family: "Times New Roman", Times, serif; /* Tipografía estilo Mercedes */
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.hero-btn {
+  background-color: #0078d6; /* Azul Mercedes */
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content; /* Evita que el botón ocupe todo el ancho disponible */
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #005bb5;
+}
+
+/* --- Estilos para los indicadores laterales --- */
+.hero-indicators {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 2;
+}
+
+.indicator {
+  width: 4px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: white;
+}
+
+.scroll-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.6rem;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.2;
+}
+/* Contenedor principal de la sección */
+.features-section {
+  padding: 80px 5%; /* Da aire arriba/abajo y márgenes laterales fluidos */
+  background-color: #ffffff; 
+}
+
+/* La grilla que divide todo en 2 columnas */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas del mismo ancho */
+  gap: 40px; /* Separación exacta entre las fotos */
+  max-width: 1400px; /* Evita que se estire demasiado en monitores gigantes */
+  margin: 0 auto; /* Centra la grilla en la pantalla */
+}
+
+/* Contenedor de cada bloque (foto + texto) */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Asegura que la imagen ocupe todo el ancho de su columna */
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Mantiene la proporción rectangular de la foto */
+  object-fit: cover;
+  display: block;
+}
+
+/* Espaciado del texto respecto a la foto */
+.text-content {
+  padding-top: 20px;
+}
+
+.text-content h3 {
+  font-family: Arial, sans-serif; /* Cambialo por la fuente que estés usando */
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 10px 0; /* Margen solo abajo para separar del párrafo */
+}
+
+.text-content p {
+  font-family: Arial, sans-serif; /* Cambialo por la fuente que estés usando */
+  font-size: 0.95rem;
+  line-height: 1.6; /* Interlineado para que sea fácil de leer */
+  color: #4a4a4a; /* Gris oscuro para el texto secundario */
+  margin: 0;
+}
+
+
+/* Contenedor de la sección de especificaciones */
+.specs-section {
+  padding: 60px 5%;
+  background-color: #ffffff;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Grilla de 4 columnas */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: end; /* Alinea todo hacia abajo para que los números queden en la misma línea */
+}
+
+/* Cada bloque de información */
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Texto pequeño arriba (solo lo usa "Aceleración en") */
+.spec-label-top {
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+/* El número grande */
+.spec-value {
+  font-family: "Times New Roman", Times, serif; /* Tipografía serif estilo Mercedes */
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: baseline; /* Alinea la base del número con la letra pequeña */
+  gap: 5px;
+}
+
+/* La unidad de medida (CV, Nm, s, km/h) */
+.spec-value span {
+  font-size: 1.5rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* La etiqueta de abajo (Potencia, par motor, etc.) */
+.spec-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #000000;
+}
+
+/* El supraíndice [b] */
+.spec-label sup {
+  font-size: 0.6rem;
+  margin-left: 2px;
+}
+
+/* Texto legal del final */
+.specs-disclaimer {
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #767676; /* Un gris más sutil para que no resalte tanto */
+  margin-top: 60px;
+}
+@media (max-width: 900px) {
+  .specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+}
+
+/* En celulares, pasa a 1 sola columna */
+@media (max-width: 500px) {
+  .specs-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+/* --- Cabecera de la sección --- */
+.exterior-features {
+  padding: 60px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.features-header .subtitle {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.features-header h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 10px 0 20px 0;
+}
+
+.features-header p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  max-width: 900px;
+}
+
+.features-tabs {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.features-tabs .tab {
+  background: none;
+  border: none;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+}
+
+.features-tabs .tab.active {
+  color: #000;
+}
+
+.features-tabs .tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0078d6; /* Azul Mercedes */
+}
+
+/* --- Contenedor Interactivo --- */
+.interactive-car-container {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+  background-color: #eef1f4; /* Fondo gris claro típico de las fotos de auto */
+  overflow: hidden; /* Fundamental para esconder el panel lateral */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-car-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Capa para oscurecer el auto al abrir el panel */
+.car-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 5;
+}
+
+.car-overlay.active {
+  opacity: 1;
+  pointer-events: auto; /* Permite hacer clic afuera para cerrar */
+}
+
+/* --- Puntos Interactivos (Hotspots) --- */
+.hotspot {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background-color: #333333;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotspot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.hotspot:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.hotspot.active {
+  border-color: #ffffff;
+  z-index: 11;
+}
+
+.hotspot.active::after {
+  background-color: #0078d6; /* El puntito azul interior */
+}
+
+/* --- Panel Lateral --- */
+.detail-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%; /* En escritorio ocupa el 40% de la derecha */
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 20;
+  transform: translateX(100%); /* Lo esconde fuera de la pantalla por defecto */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animación suave */
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+}
+
+.detail-panel.open {
+  transform: translateX(0); /* Lo trae a la pantalla */
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 21;
+}
+
+.close-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.detail-img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.detail-content {
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.detail-content h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.detail-content p {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .detail-panel {
+    width: 100%; /* En celu, el panel ocupa todo el ancho */
+  }
+  .features-tabs {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
