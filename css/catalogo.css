@@ -1,7 +1,7 @@
+
 .tarjeta-mercedes {
   width: 18rem;
 }
-
 body {
   background-image: url('../assets/img/FONDONEGRO1.jpg');
   background-size: cover;
@@ -22,7 +22,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .hero-titulo {
   font-size: 4rem;
   text-transform: uppercase;
@@ -38,13 +37,11 @@ body {
   font-weight: 300;
   color: #e0e0e0;
 }
-
 .hero-content {
   text-align: left;
   color: #ffffff;
   max-width: 700px;
 }
-
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -62,7 +59,7 @@ body {
 /* --- SECCION RECOMENDACIONES --- */
 .recomendaciones {
   padding: 80px 5% 60px;
-  background: rgba(0, 0, 0, 0.6);
+  
 }
 
 .recomendaciones__titulo {
@@ -75,22 +72,18 @@ body {
 
 .recomendaciones__grid {
   display: grid;
-  /* EL TRUCO: Cambiamos 300px por 380px. Las tarjetas ahora son más anchas, 
-     lo que obliga a la foto a hacer MENOS zoom para llenar la altura. */
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
 .card-auto {
   position: relative;
-  height: 550px; /* TU ALTURA ORIGINAL INTACTA */
+  height: 550px;
   background-color: #f4f4f4;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  border-radius: 4px;
 }
 
 .card-auto__img {
@@ -99,21 +92,15 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* VOLVEMOS AL COVER para que llene el 100% sin dejar franjas */
-  object-position: center center; /* Mantiene al auto en el medio exacto */
+  object-fit: cover;
   z-index: 1;
-  transition: transform 2s ease;
-}
-
-.card-auto:hover .card-auto__img {
-  transform: scale(1.08);
 }
 
 .card-auto__content {
   position: relative;
   z-index: 2;
   padding: 40px 30px 30px;
-  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 45%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0) 100%);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -123,7 +110,6 @@ body {
 .card-auto__tag {
   font-size: 0.85rem;
   font-weight: 300;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .card-auto__nombre {
@@ -131,8 +117,6 @@ body {
   font-size: 1.8rem;
   font-weight: normal;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0px 4px 15px rgba(0, 0, 0, 0.6);
-  letter-spacing: 1px;
 }
 
 .card-auto__acciones {
@@ -165,4 +149,93 @@ body {
 
 .link-blanco:hover {
   opacity: 0.8;
+}
+/* =========================================
+   SECCIÓN: LEGALES Y ACCIONES
+========================================= */
+.legales-y-acciones {
+  background-color: #000000; 
+  width: 100%;
+  padding: 4rem 2rem 120px 2rem; 
+  box-sizing: border-box;
+}
+
+.aviso-legal,
+.acciones-grid {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- AVISO LEGAL --- */
+.aviso-legal {
+  margin-bottom: 4rem;
+}
+
+.aviso-legal p {
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #aaaaaa; 
+  margin: 0;
+}
+
+.aviso-legal strong {
+  color: #ffffff; 
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* --- GRILLA DE ACCIONES --- */
+.acciones-grid {
+  display: grid;
+  /* SOLUCIÓN: Cambiamos el repeat(4) rígido por auto-fit y minmax. 
+     Esto evita que las tarjetas se aplasten o corten el contenido en pantallas más chicas. */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.accion-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #111111; 
+  border: 1px solid #333333; 
+  padding: 3rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  border-bottom: 3px solid transparent;
+  transition: background-color 0.3s ease, border-bottom-color 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Asegura que todas las tarjetas midan lo mismo aunque tengan distinto texto */
+  box-sizing: border-box;
+}
+
+.accion-card:hover {
+  background-color: #1a1a1a; 
+  border-bottom-color: #b30000; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.accion-icon {
+  width: 24px;
+  height: 24px;
+  color: #ffffff; 
+  margin-bottom: 1.5rem;
+}
+
+.accion-titulo {
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff; 
+  margin-bottom: 0.8rem;
+}
+
+.accion-descripcion {
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  color: #cccccc; 
+  line-height: 1.4;
+  margin: 0;
 }
