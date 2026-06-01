@@ -216,3 +216,213 @@
     gap: 30px;
   }
 }
+/* --- Cabecera de la sección --- */
+.exterior-features {
+  padding: 60px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.features-header .subtitle {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.features-header h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 10px 0 20px 0;
+}
+
+.features-header p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  max-width: 900px;
+}
+
+.features-tabs {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.features-tabs .tab {
+  background: none;
+  border: none;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+}
+
+.features-tabs .tab.active {
+  color: #000;
+}
+
+.features-tabs .tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0078d6; /* Azul Mercedes */
+}
+
+/* --- Contenedor Interactivo --- */
+.interactive-car-container {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+  background-color: #eef1f4; /* Fondo gris claro típico de las fotos de auto */
+  overflow: hidden; /* Fundamental para esconder el panel lateral */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-car-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Capa para oscurecer el auto al abrir el panel */
+.car-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 5;
+}
+
+.car-overlay.active {
+  opacity: 1;
+  pointer-events: auto; /* Permite hacer clic afuera para cerrar */
+}
+
+/* --- Puntos Interactivos (Hotspots) --- */
+.hotspot {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background-color: #333333;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotspot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.hotspot:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.hotspot.active {
+  border-color: #ffffff;
+  z-index: 11;
+}
+
+.hotspot.active::after {
+  background-color: #0078d6; /* El puntito azul interior */
+}
+
+/* --- Panel Lateral --- */
+.detail-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%; /* En escritorio ocupa el 40% de la derecha */
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 20;
+  transform: translateX(100%); /* Lo esconde fuera de la pantalla por defecto */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animación suave */
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+}
+
+.detail-panel.open {
+  transform: translateX(0); /* Lo trae a la pantalla */
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 21;
+}
+
+.close-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.detail-img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.detail-content {
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.detail-content h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.detail-content p {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .detail-panel {
+    width: 100%; /* En celu, el panel ocupa todo el ancho */
+  }
+  .features-tabs {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
