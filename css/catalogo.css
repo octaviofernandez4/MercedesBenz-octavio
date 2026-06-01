@@ -10,128 +10,232 @@ body {
   background-attachment: fixed;
 }
 
-/* =========================================
-   Contenedor General del Catálogo
-   ========================================= */
-main section {
-  padding: 50px 20px;
- 
-}
-
-/* =========================================
-   Diseño de la Tarjeta (.tarjeta-mercedes)
-   ========================================= */
-
-/* =========================================
-   1. Contenedor Padre (La Tarjeta)
-   Aseguramos que nada se salga de aquí.
-   ========================================= */
-.tarjeta-mercedes {
-  /* ... tus otros estilos (background, blur, etc.) ... */
-  
-  /* IMPORTANTE: Esto corta cualquier cosa que intente salir de la tarjeta */
-  overflow: hidden !important; 
-  
-  /* Reforzamos los bordes redondeados para que el corte sea perfecto */
-  border-radius: 16px !important; 
-  
-  /* Mantenemos la transición suave por si acaso */
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* =========================================
-   2. La Imagen (Estado Normal)
-   Preparamos la animación.
-   ========================================= */
-.tarjeta-mercedes img {
-  /* ... tus otros estilos (height, object-fit) ... */
-  
-  /* ESTO ES CLAVE: La transición debe estar AQUÍ para que al sacar el mouse también sea suave */
-  transition: transform 0.5s ease-in-out, filter 0.3s ease;
-  
-  /* Aseguramos que la imagen ocupe todo el ancho */
+.hero {
+  background-image: url('../assets/img/pexels-mikebirdy-120049.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
   width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-titulo {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-/* =========================================
-   3. Hover SOLO en la Foto
-   Efecto de zoom "hacia adentro".
-   ========================================= */
-.tarjeta-mercedes img:hover {
-  /* Hace un zoom del 10%. Al tener overflow:hidden en el padre, se ve 'hacia adentro' */
-  transform: scale(1.1); 
-  
-  /* Opcional: Un pequeño aumento de brillo para resaltar */
-  filter: brightness(1.1); 
-  
-  cursor: pointer;
+.hero-descripcion {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+  color: #e0e0e0;
+}
+.hero-content {
+  text-align: left;
+  color: #ffffff;
+  max-width: 700px;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+  box-sizing: border-box;
 }
 
-/* =========================================
-   Cuerpo de la Tarjeta y ORDENAMIENTO (La Magia)
-   ========================================= */
-.tarjeta-mercedes .card-body {
+/* --- SECCION RECOMENDACIONES --- */
+.recomendaciones {
+  padding: 80px 5% 60px;
+  
+}
+
+.recomendaciones__titulo {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.7rem;
+  font-weight: normal;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.recomendaciones__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card-auto {
+  position: relative;
+  height: 550px;
+  background-color: #f4f4f4;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 25px;
-  /* El z-index asegura que el texto quede por encima de la imagen al hacer zoom */
-  position: relative; 
+  justify-content: flex-end;
+}
+
+.card-auto__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.card-auto__content {
+  position: relative;
   z-index: 2;
-  background: linear-gradient(to top, rgba(30,30,30, 1) 40%, rgba(30,30,30, 0.8));
+  padding: 40px 30px 30px;
+  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0) 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-/* 1. Título */
-.tarjeta-mercedes .card-title {
-  order: 1; /* Primer lugar */
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* 2. Botón de Más Información */
-.tarjeta-mercedes .btn {
-  order: 2; /* Segundo lugar */
-  background: transparent !important;
-  color: #ffffff !important; /* Texto azul eléctrico */
-  border: 2px solid #ffffff !important;
-  border-radius: 30px;
-  padding: 10px 20px;
-  font-weight: 600;
-  text-transform: uppercase;
+.card-auto__tag {
   font-size: 0.85rem;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  margin-bottom: 20px; /* Separación con la descripción que va abajo */
-  text-align: center;
+  font-weight: 300;
 }
 
-/* Hover del botón */
-.tarjeta-mercedes .btn:hover {
-  background: #ff0000 !important;
-  color: #000000 !important;
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
-  transform: scale(1.05);
+.card-auto__nombre {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin-bottom: 20px;
 }
 
-/* 3. Descripción Breve */
-.tarjeta-mercedes .card-text {
-  order: 3; /* Tercer lugar */
-  color: #aaaaaa;
+.card-auto__acciones {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-azul {
+  background-color: #c10000;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
   font-size: 0.9rem;
-  line-height: 1.5;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-azul:hover {
+  background-color: #000000;
+}
+
+.link-blanco {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.link-blanco:hover {
+  opacity: 0.8;
+}
+/* =========================================
+   SECCIÓN: LEGALES Y ACCIONES
+========================================= */
+.legales-y-acciones {
+  background-color: #000000; 
+  width: 100%;
+  padding: 4rem 2rem 120px 2rem; 
+  box-sizing: border-box;
+}
+
+.aviso-legal,
+.acciones-grid {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- AVISO LEGAL --- */
+.aviso-legal {
+  margin-bottom: 4rem;
+}
+
+.aviso-legal p {
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #aaaaaa; 
   margin: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 15px;
 }
 
-/* Ajuste para las tarjetas que no tienen descripción (para que el botón no quede flotando) */
-.tarjeta-mercedes .card-text:empty {
-  display: none;
+.aviso-legal strong {
+  color: #ffffff; 
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
+/* --- GRILLA DE ACCIONES --- */
+.acciones-grid {
+  display: grid;
+  /* SOLUCIÓN: Cambiamos el repeat(4) rígido por auto-fit y minmax. 
+     Esto evita que las tarjetas se aplasten o corten el contenido en pantallas más chicas. */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
 
+.accion-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #111111; 
+  border: 1px solid #333333; 
+  padding: 3rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  border-bottom: 3px solid transparent;
+  transition: background-color 0.3s ease, border-bottom-color 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Asegura que todas las tarjetas midan lo mismo aunque tengan distinto texto */
+  box-sizing: border-box;
+}
 
+.accion-card:hover {
+  background-color: #1a1a1a; 
+  border-bottom-color: #b30000; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
 
+.accion-icon {
+  width: 24px;
+  height: 24px;
+  color: #ffffff; 
+  margin-bottom: 1.5rem;
+}
+
+.accion-titulo {
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff; 
+  margin-bottom: 0.8rem;
+}
+
+.accion-descripcion {
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  color: #cccccc; 
+  line-height: 1.4;
+  margin: 0;
+}
