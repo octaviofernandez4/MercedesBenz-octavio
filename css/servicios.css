@@ -1,0 +1,371 @@
+
+.hero {
+  background-image: url('../assets/img/ServiciosMercedes.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-imagen2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 520px;
+  background-image: url('../assets/img/SF2-GLE-HP-L-V2.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero-imagen2__panel {
+  max-width: 480px;
+  margin-left: 8%;
+  background: rgba(245, 245, 243, 0.72);
+  backdrop-filter: blur(6px);
+  padding: 2.5rem 2.5rem 2.5rem 2rem;
+}
+
+/* =========================================
+   Reemplaza la clase hero-overlay
+   ========================================= */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   Reemplaza la clase hero-content
+   ========================================= */
+.hero-content {
+  text-align: left;
+  color: #ffffff;
+  max-width: 700px;
+}
+
+.hero-titulo {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-descripcion {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+  color: #e0e0e0;
+}
+/* Contenedor principal */
+.mercedes-services {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Grilla de 4 columnas */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem; /* Espacio entre tarjetas */
+}
+
+/* Estructura de la tarjeta */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e5e5; /* Borde gris muy sutil */
+  background-color: #ffffff;
+}
+
+/* Contenedor de la imagen */
+.img-wrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ocupa el espacio restante para igualar alturas */
+}
+
+/* Textos */
+.card-body h3 {
+  font-size: 1.1rem;
+  color: #000000;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: #333333;
+  line-height: 1.5;
+  margin: 0 0 2rem 0;
+}
+
+/* Contenedor del botón: el auto-margin lo empuja siempre al fondo */
+.btn-wrapper {
+  margin-top: auto;
+}
+
+/* Estilos generales de los botones */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Botón azul principal */
+.btn-primary {
+  background-color: #0078d6;
+  color: #ffffff;
+  border: 1px solid #0078d6;
+}
+
+.btn-primary:hover {
+  background-color: #005a9e;
+}
+
+/* Botones secundarios (borde gris) */
+.btn-secondary {
+  background-color: transparent;
+  color: #333333;
+  border: 1px solid #cccccc;
+}
+
+.btn-secondary:hover {
+  background-color: #308ce2;
+}
+
+/* Contenedor principal */
+.mercedes-bottom-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+/* Sección del Aviso Legal */
+.legal-notice {
+  margin-bottom: 4rem;
+}
+
+.legal-notice strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #000;
+}
+
+.legal-notice p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* Grilla de Tarjetas */
+.action-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Tarjeta individual */
+.action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #f8f8f8; /* Gris muy clarito por defecto */
+  padding: 2.5rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ededed;
+  border-bottom: 3px solid transparent; /* Espacio reservado para la línea azul */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efecto hover (como se ve en la tarjeta de "Contacto" de tu imagen) */
+.action-card:hover,
+.action-card:focus {
+  background-color: #e2e2e2; /* Gris más oscuro */
+  border-bottom: 3px solid #0078d6; /* Línea azul inferior */
+}
+
+/* Íconos */
+.card-icon {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Textos de la tarjeta */
+.action-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 0.5rem 0;
+}
+
+.action-card p {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Contenedor principal */
+.mercedes-contact-section {
+  max-width: 1000px; /* Ancho máximo para que no se estire demasiado en monitores grandes */
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #333;
+}
+
+/* Cabecera */
+.contact-header {
+  margin-bottom: 3rem;
+}
+
+/* Tipografía Serif para imitar el estilo de Mercedes-Benz */
+.contact-header h2, 
+.form-section h3 {
+  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-weight: 400;
+  color: #222;
+}
+
+.contact-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-header p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+  margin: 0;
+}
+
+/* Títulos de sección del formulario */
+.form-section {
+  margin-bottom: 3rem;
+}
+
+.form-section h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Grilla del formulario */
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Estilo de los campos (Caja gris) */
+.input-group {
+  background-color: #f6f6f6;
+  border: 1px solid #e0e0e0;
+  padding: 0.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease;
+}
+
+/* Efecto al hacer clic en el input */
+.input-group:focus-within {
+  border-color: #999;
+}
+
+/* Textos de las etiquetas (Nombre, Celular, etc.) */
+.input-group label {
+  font-size: 0.75rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+/* Reset de estilos nativos para inputs, selects y textareas */
+.input-group input,
+.input-group select,
+.input-group textarea {
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #333;
+  font-family: inherit;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  resize: vertical; /* Permite agrandar el textarea solo hacia abajo */
+}
+
+/* Color del texto de ejemplo (placeholder) */
+.input-group input::placeholder,
+.input-group select:invalid {
+  color: #666;
+}
+
+/* Select personalizado (para la flechita negra de la captura) */
+.select-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  /* Flecha SVG inyectada directo en el CSS para no depender de imágenes externas */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23333%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0 top 50%;
+  background-size: 1.5rem auto;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+  .two-cols {
+    grid-template-columns: 1fr;
+  }
+}
