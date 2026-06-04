@@ -1,4 +1,3 @@
-
 .hero-video {
   position: relative;
   width: 100%;
@@ -6,8 +5,8 @@
   min-height: 520px;
   background: #0a0a0a;
   display: flex;
-  align-items: center; 
-  padding-left: 8%;    
+  align-items: center;
+  padding-left: 8%;
 }
 
 .hero-video__bg {
@@ -23,7 +22,6 @@
   object-fit: cover;
   object-position: center;
 }
-
 
 .hero-video__toggle {
   position: absolute;
@@ -51,9 +49,9 @@
   position: relative;
   z-index: 5;
   width: 100%;
-  max-width: 320px; 
+  max-width: 320px;
   padding: 2.5rem;
-  background: rgba(214, 215, 217, 0.95); 
+  background: rgba(214, 215, 217, 0.95);
   display: flex;
   flex-direction: column;
 
@@ -65,7 +63,7 @@
   font-weight: 400;
   line-height: 1.1;
   color: #1a1a1a;
-  margin: 0 0 1rem 0; 
+  margin: 0 0 1rem 0;
 }
 
 .hero-video__descripcion {
@@ -80,11 +78,11 @@
 .hero-video__acciones {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; 
+  gap: 0.5rem;
 }
 
 .hero-video__btn {
-  width: 170px; 
+  width: 170px;
   padding: 0.7rem 1rem;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.85rem;
@@ -92,13 +90,13 @@
   text-align: center;
   cursor: pointer;
   border: none;
-  border-radius: 0; 
-  text-decoration: none; 
+  border-radius: 0;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box; 
-  transition: background-color 0.2s ease, color 0.2s ease; 
+  box-sizing: border-box;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .hero-video__btn--primary {
@@ -119,6 +117,7 @@
 .hero-video__btn--secondary:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
+
 .info-section {
   width: 100%;
   background-color: #ffffff;
@@ -172,6 +171,7 @@
   font-size: 0.7rem;
   cursor: pointer;
 }
+
 .highlights-section {
   width: 100%;
   background-color: #ffffff;
@@ -242,6 +242,7 @@
   cursor: pointer;
   margin-left: 0.1rem;
 }
+
 .gallery-section {
   width: 100%;
   max-width: 1000px;
@@ -401,7 +402,7 @@
 }
 
 .gallery-item:hover {
-  filter: grayscale(0%) saturate(150%);
+  filter: grayscale(0%) saturate(190%);
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgb(4, 126, 248);
   z-index: 10;
@@ -413,4 +414,24 @@
 
 .hide {
   display: none !important;
+}
+@media (max-width: 768px) {
+  .gallery-tabs {
+    gap: 1rem;
+  }
+
+  .gallery-tab {
+    padding: 1rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .span-2 {
+    grid-column: span 1;
+  }
 }
