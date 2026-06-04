@@ -1,0 +1,244 @@
+
+.hero-video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 520px;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center; 
+  padding-left: 8%;    
+}
+
+.hero-video__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-video__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.hero-video__toggle {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.5rem;
+  z-index: 10;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.hero-video__toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero-video__panel {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 320px; 
+  padding: 2.5rem;
+  background: rgba(214, 215, 217, 0.95); 
+  display: flex;
+  flex-direction: column;
+
+}
+
+.hero-video__titulo {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0; 
+}
+
+.hero-video__descripcion {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #333;
+  margin: 0 0 1.5rem 0;
+}
+
+.hero-video__acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; 
+}
+
+.hero-video__btn {
+  width: 170px; 
+  padding: 0.7rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 0; 
+  text-decoration: none; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; 
+  transition: background-color 0.2s ease, color 0.2s ease; 
+}
+
+.hero-video__btn--primary {
+  background-color: #0078d6;
+  color: #ffffff;
+}
+
+.hero-video__btn--primary:hover {
+  background-color: #005a9e;
+}
+
+.hero-video__btn--secondary {
+  background-color: transparent;
+  color: #1a1a1a;
+  border: 1px solid #666;
+}
+
+.hero-video__btn--secondary:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.info-section {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.info-section__image-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-section__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info-section__content {
+  width: 100%;
+  max-width: 800px;
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1a1a1a;
+}
+
+.info-section__headline {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+  line-height: 1.4;
+}
+
+.info-section__text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  color: #333333;
+}
+
+.info-section__text:last-child {
+  margin-bottom: 0;
+}
+
+.info-section__text sup {
+  color: #0078d6;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.highlights-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.highlights-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 3rem;
+}
+
+.highlights-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .highlights-container {
+    flex-direction: row;
+    gap: 4rem;
+  }
+}
+
+.highlights-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.highlights-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+}
+
+.highlights-subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.highlights-list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.highlights-list li {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.highlights-list sup {
+  color: #0078d6;
+  font-size: 0.65rem;
+  cursor: pointer;
+  margin-left: 0.1rem;
+}
