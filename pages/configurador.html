@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="author" content="octavio fernandez" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="mercedes,benz,modelos,4matic,coupe,auto,carro,vehiculo,luxury,luxurycar,suv" />
-  <meta name="description" content="Pagina web de un vehiculo mercedes benz gle 53 4matic coupe" />
+  <meta name="keywords" content="mercedes,benz,configurador,cla200,4matic,coupe,auto,carro,vehiculo,luxury" />
+  <meta name="description" content="Configurá tu Mercedes-Benz CLA 200 Progressive: color, llantas e interior." />
   <link rel="icon" href="../assets/img/LOGOPLATEADO1-removebg-preview.png" type="image/png" />
 
   <!-- BOOTSTRAP -->
@@ -15,12 +15,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- ESTILOS -->
-  <link rel="stylesheet" href="../css/asesorate.css" />
+  <link rel="stylesheet" href="../css/configurador.css" />
   <link rel="stylesheet" href="../css/navbar.css">
   <link rel="stylesheet" href="../css/footer.css" />
   <link rel="stylesheet" href="../css/indexresponsive.css" />
 
-  <title>Asesorate | Octavio Fernandez</title>
+  <title>Configurador | Octavio Fernandez</title>
 </head>
 
 <body>
@@ -60,105 +60,73 @@
     </nav>
   </header>
 
-<main>
-    <!-- HERO PRINCIPAL -->
-    <section class="hero">
-      <div class="hero-overlay">
-        <div class="hero-content">
-          <h1 class="hero-titulo">Centro de Asesoramiento</h1>
-          <p class="hero-descripcion">Atención personalizada y experta para resolver todas tus consultas, conocer nuestros servicios o guiarte hacia tu próximo vehículo.</p>
+  <main>
+    <section class="config-hero">
+      <h1 class="config-hero__titulo">Configurá tu CLA 200 Progressive</h1>
+      <p class="config-hero__descripcion">Elegí color, llantas e interior y mirá el precio actualizarse en tiempo real.</p>
+    </section>
+
+    <section class="configurador">
+      <div class="configurador__visor">
+        <div class="visor__imagen-wrapper">
+          <img src="../assets/img/CLA200 EXTERIOR.avif" alt="CLA 200 Progressive" class="visor__imagen">
+          <span class="visor__color-label" id="visorColorLabel"></span>
         </div>
+        <p class="visor__nota">Foto real del modelo. El color seleccionado se refleja en el precio y en el resumen de tu configuración.</p>
+      </div>
+
+      <div class="configurador__panel">
+
+        <div class="config-grupo">
+          <h2 class="config-grupo__titulo">Color exterior</h2>
+          <div class="config-opciones config-opciones--color" id="grupoColor" data-grupo="color">
+            <!-- Botones de color generados por JS -->
+          </div>
+        </div>
+
+        <div class="config-grupo">
+          <h2 class="config-grupo__titulo">Llantas</h2>
+          <div class="config-opciones" id="grupoRines" data-grupo="rines">
+            <!-- Botones generados por JS -->
+          </div>
+        </div>
+
+        <div class="config-grupo">
+          <h2 class="config-grupo__titulo">Tapizado interior</h2>
+          <div class="config-opciones" id="grupoInterior" data-grupo="interior">
+            <!-- Botones generados por JS -->
+          </div>
+        </div>
+
+        <div class="config-resumen">
+          <h2 class="config-resumen__titulo">Tu configuración</h2>
+          <ul class="config-resumen__lista" id="resumenLista"></ul>
+          <div class="config-resumen__total">
+            <span>Precio total</span>
+            <strong id="resumenTotal">US$ 0</strong>
+          </div>
+
+          <div class="config-resumen__acciones">
+            <button type="button" class="btn-azul" id="btnCopiarResumen">Copiar resumen</button>
+            <button type="button" class="link-blanco-inv" id="btnReset">Restablecer</button>
+          </div>
+          <p class="config-resumen__feedback" id="resumenFeedback" aria-live="polite"></p>
+
+          <a href="./servicios.html#contacto" class="btn-cta-config">Solicitar esta configuración</a>
+        </div>
+
       </div>
     </section>
 
-    <section class="ayuda-contacto">
-    <div class="contenedor-ayuda">
-        <h2 class="ayuda-titulo">Ayuda y contacto</h2>
-        
-        <div class="ayuda-grid">
-            
-            <div class="ayuda-card">
-                <div class="ayuda-img-box">
-                    <img src="../assets/img/FORMULARIO DE CONTACTO.jpg" alt="Formulario de contacto">
-                </div>
-                <div class="ayuda-info">
-                    <h3 class="ayuda-card-titulo">Formulario de contacto</h3>
-                    <p class="ayuda-card-texto">Usá nuestro formulario y te respondemos a la brevedad.</p>
-                    <a href="#" class="ayuda-btn-flecha" aria-label="Ir a formulario">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-                    </a>
-                </div>
-            </div>
+    <section class="legales-y-acciones">
+      <div class="aviso-legal">
+        <p><strong>Aviso legal y notas:</strong><br>
+        Los precios y colores mostrados en este configurador son ilustrativos, con fines de demostración de un proyecto de portfolio, y no representan valores reales de venta.</p>
+      </div>
+    </section>
+  </main>
 
-            <div class="ayuda-card">
-                <div class="ayuda-img-box">
-                    <img src="../assets/img/LINEADIRECTA.jpg" alt="Línea directa">
-                </div>
-                <div class="ayuda-info">
-                    <h3 class="ayuda-card-titulo">Línea directa de atención al cliente</h3>
-                    <p class="ayuda-card-texto">Llamanos al <a href="tel:3813019932" class="ayuda-link">3813019932</a>, de lunes a viernes de 8 a 20hs.</p>
-                </div>
-            </div>
-
-            <div class="ayuda-card">
-                <div class="ayuda-img-box">
-                    <img src="../assets/img/Recursos humanos.jpg" alt="Recursos humanos">
-                </div>
-                <div class="ayuda-info">
-                    <h3 class="ayuda-card-titulo">Recursos humanos</h3>
-                    <p class="ayuda-card-texto">Enviá tu CV a <a href="mailto:octaviofernandez40999@gmail.com" class="ayuda-link">octaviofernandez40999@gmail.com</a></p>
-                </div>
-            </div>
-
-            <div class="ayuda-card">
-                <div class="ayuda-img-box">
-                    <img src="../assets/img/TURNO DE SERVICIO.jpg" alt="Turno de servicio">
-                </div>
-                <div class="ayuda-info">
-                    <h3 class="ayuda-card-titulo">Turno de servicio</h3>
-                    <p class="ayuda-card-texto">Reservá tu turno en el taller Mercedes-Benz más cercano.</p>
-                    <a href="#" class="ayuda-btn-flecha" aria-label="Reservar turno">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="ayuda-card">
-                <div class="ayuda-img-box">
-                    <img src="../assets/img/CONMUTADOR CASA CENTRAL.jpg" alt="Conmutador">
-                </div>
-                <div class="ayuda-info">
-                    <h3 class="ayuda-card-titulo">Conmutador Casa Central</h3>
-                    <p class="ayuda-card-texto">Llamanos al <a href="tel:+541144699000" class="ayuda-link">+54 381 301 9932</a> - Atención de lunes a viernes de 8 a 17hs.</p>
-                </div>
-            </div>
-            <div class="ayuda-card">
-                <div class="ayuda-img-box">
-                    <img src="../assets/img/CORRESPONDENCIA.jpg" alt="Correspondencia">
-                </div>
-                <div class="ayuda-info">
-                    <h3 class="ayuda-card-titulo">Correspondencia</h3>
-                    <p class="ayuda-card-texto"> </p>
-                </div>
-            </div>
-
-            <div class="ayuda-card">
-                <div class="ayuda-img-box">
-                    <img src="../assets/img/BUSCADOR DE CONCSSS.jpg" alt="Buscador concesionarios">
-                </div>
-                <div class="ayuda-info">
-                    <h3 class="ayuda-card-titulo">Buscador de concesionarios</h3>
-                    <p class="ayuda-card-texto">Encontrá tu concesionario Mercedes-Benz más cercano.</p>
-                    <a href="#" class="ayuda-btn-flecha" aria-label="Buscar concesionario">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
- <footer class="footer" role="contentinfo">
+  <footer class="footer" role="contentinfo">
 
     <div class="footer-main">
       <div class="footer-col">
@@ -177,7 +145,7 @@
       <div class="footer-col">
         <h4 class="footer-col-titulo">- Proyecto de Portfolio </h4>
         <ul class="footer-col-lista">
-          <li><a href="#">(Clon no oficial)</a></li>         
+          <li><a href="#">(Clon no oficial)</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -229,7 +197,6 @@
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 Octavio Fernandez</p>
       <nav class="footer-legal" aria-label="Legal">
-   
       </nav>
       <nav class="footer-socials" aria-label="Redes sociales">
         <a href="#" aria-label="Facebook"><img src="../assets/img/facebook.png" alt="Facebook"></a>
@@ -243,50 +210,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+
+  <script src="../js/configurador.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
