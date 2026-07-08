@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="octavio fernandez" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="mercedes,benz,configurador,cla200,4matic,coupe,auto,carro,vehiculo,luxury" />
+  <meta name="description" content="Configurá tu Mercedes-Benz CLA 200 Progressive: color, llantas e interior." />
+  <link rel="icon" href="../assets/img/LOGOPLATEADO1-removebg-preview.png" type="image/png" />
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- ESTILOS -->
+  <link rel="stylesheet" href="../css/configurador.css" />
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/indexresponsive.css" />
+
+  <title>Configurador | Octavio Fernandez</title>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg mi-nav-personalizado">
+      <div class="container-fluid">
+
+        <a class="navbar-brand mi-logo" href="../index.html">
+          <img src="../assets/img/LOGOPLATEADO1-removebg-preview.png" alt="Logo de Mercedes-Benz" width="40" height="40" class="d-inline-block align-text-top">
+          Mercedes-Benz
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mi-lista-enlaces">
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/marca.html">Marca</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/asesorate.html">Asesorate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/modelos.html">Modelos</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="config-hero">
+      <h1 class="config-hero__titulo">Configurá tu CLA 200 Progressive</h1>
+      <p class="config-hero__descripcion">Elegí color, llantas e interior y mirá el precio actualizarse en tiempo real.</p>
+    </section>
+
+    <section class="configurador">
+      <div class="configurador__visor">
+        <div class="visor__imagen-wrapper">
+          <img src="../assets/img/CLA200 EXTERIOR.avif" alt="CLA 200 Progressive" class="visor__imagen" id="visorImagen">
+          <div class="visor__tinte" id="visorTinte"></div>
+        </div>
+        <p class="visor__nota">Vista previa ilustrativa. El color final se aplica sobre la carrocería mediante un tinte digital.</p>
+      </div>
+
+      <div class="configurador__panel">
+
+        <div class="config-grupo">
+          <h2 class="config-grupo__titulo">Color exterior</h2>
+          <div class="config-opciones config-opciones--color" id="grupoColor" data-grupo="color">
+            <!-- Botones de color generados por JS -->
+          </div>
+        </div>
+
+        <div class="config-grupo">
+          <h2 class="config-grupo__titulo">Llantas</h2>
+          <div class="config-opciones" id="grupoRines" data-grupo="rines">
+            <!-- Botones generados por JS -->
+          </div>
+        </div>
+
+        <div class="config-grupo">
+          <h2 class="config-grupo__titulo">Tapizado interior</h2>
+          <div class="config-opciones" id="grupoInterior" data-grupo="interior">
+            <!-- Botones generados por JS -->
+          </div>
+        </div>
+
+        <div class="config-resumen">
+          <h2 class="config-resumen__titulo">Tu configuración</h2>
+          <ul class="config-resumen__lista" id="resumenLista"></ul>
+          <div class="config-resumen__total">
+            <span>Precio total</span>
+            <strong id="resumenTotal">US$ 0</strong>
+          </div>
+
+          <div class="config-resumen__acciones">
+            <button type="button" class="btn-azul" id="btnCopiarResumen">Copiar resumen</button>
+            <button type="button" class="link-blanco-inv" id="btnReset">Restablecer</button>
+          </div>
+          <p class="config-resumen__feedback" id="resumenFeedback" aria-live="polite"></p>
+
+          <a href="./servicios.html#contacto" class="btn-cta-config">Solicitar esta configuración</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="legales-y-acciones">
+      <div class="aviso-legal">
+        <p><strong>Aviso legal y notas:</strong><br>
+        Los precios y colores mostrados en este configurador son ilustrativos, con fines de demostración de un proyecto de portfolio, y no representan valores reales de venta.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+
+    <div class="footer-main">
+      <div class="footer-col">
+        <h4 class="footer-col-titulo">Nuestros modelos</h4>
+        <ul class="footer-col-lista">
+          <li><a href="electric.html">Vehículos eléctricos</a></li>
+          <li><a href="modelos.html#suv">SUV</a></li>
+          <li><a href="#">Hatchback</a></li>
+          <li><a href="#">Sedán</a></li>
+          <li><a href="modelos.html#coupes">Coupé</a></li>
+          <li><a href="amg.html">Mercedes-AMG</a></li>
+          <li><a href="maybach.html">Mercedes-Maybach</a></li>
+          <li><a href="#">Vans</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-titulo">- Proyecto de Portfolio </h4>
+        <ul class="footer-col-lista">
+          <li><a href="#">(Clon no oficial)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-titulo">Asesoramiento</h4>
+        <ul class="footer-col-lista">
+          <li><a href="asesorate.html">Consultas</a></li>
+          <li><a href="#">Buscar concesionarios</a></li>
+          <li><a href="#">Fichas técnicas</a></li>
+          <li><a href="#">Solicitar un Test Drive</a></li>
+          <li><a href="#">Extras Digitales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-titulo">Propietarios</h4>
+        <ul class="footer-col-lista">
+          <li><a href="#">Agendar turno de servicio</a></li>
+          <li><a href="#">Service Programado</a></li>
+          <li><a href="#">Asistencia en caso de avería y de accidente</a></li>
+          <li><a href="#">Manuales de usuario</a></li>
+          <li><a href="#">Garantía</a></li>
+          <li><a href="#">Recall</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-titulo">Tecnología</h4>
+        <ul class="footer-col-lista">
+          <li><a href="#">Movilidad eléctrica</a></li>
+          <li><a href="#">Sistemas de asistencia a la conducción y seguridad</a></li>
+          <li><a href="#">Sistema multimedia MBUX</a></li>
+          <li><a href="#">Diseño y concept cars</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-titulo">Mundo Mercedes</h4>
+        <ul class="footer-col-lista">
+          <li><a href="#">Historia</a></li>
+          <li><a href="#">Prensa</a></li>
+          <li><a href="#">Recursos humanos</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Mercedes-Benz Argentina</a></li>
+          <li><a href="#">Sustentabilidad</a></li>
+          <li><a href="#">Políticas de Calidad y Medioambiente</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Octavio Fernandez</p>
+      <nav class="footer-legal" aria-label="Legal">
+      </nav>
+      <nav class="footer-socials" aria-label="Redes sociales">
+        <a href="#" aria-label="Facebook"><img src="../assets/img/facebook.png" alt="Facebook"></a>
+        <a href="#" aria-label="Instagram"><img src="../assets/img/instagram.png" alt="Instagram"></a>
+        <a href="#" aria-label="Twitter"><img src="../assets/img/twiiiter.png" alt="Twitter"></a>
+      </nav>
+    </div>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <script src="../js/configurador.js" defer></script>
+</body>
+</html>
