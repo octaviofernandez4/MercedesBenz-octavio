@@ -51,14 +51,17 @@
   object-fit: cover;
 }
 
-.visor__tinte {
+.visor__color-label {
   position: absolute;
-  inset: 0;
-  background-color: transparent;
-  mix-blend-mode: multiply;
-  opacity: 0.55;
-  transition: background-color 0.3s ease;
-  pointer-events: none;
+  left: 16px;
+  bottom: 16px;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
 }
 
 .visor__nota {
