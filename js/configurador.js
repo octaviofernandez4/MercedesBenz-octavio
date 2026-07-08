@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const grupoColor = document.getElementById('grupoColor');
   const grupoRines = document.getElementById('grupoRines');
   const grupoInterior = document.getElementById('grupoInterior');
-  const visorTinte = document.getElementById('visorTinte');
+  const visorColorLabel = document.getElementById('visorColorLabel');
   const resumenLista = document.getElementById('resumenLista');
   const resumenTotal = document.getElementById('resumenTotal');
   const resumenFeedback = document.getElementById('resumenFeedback');
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const { color, rines, interior, total } = calcularTotal();
-    visorTinte.style.backgroundColor = color.swatch;
+    visorColorLabel.textContent = color.nombre;
 
     resumenLista.innerHTML = `
       <li><span>Modelo base</span><span>${formatoPrecio.format(BASE_PRICE)}</span></li>
