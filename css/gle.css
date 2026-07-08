@@ -217,7 +217,9 @@ section p:last-child {
 
 @media (max-width: 576px) {
   .galeria-cuadricula {
-    grid-template-columns: 1fr; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px;
   }
 }
 

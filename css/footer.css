@@ -68,11 +68,10 @@
 }
 
 .footer-copy {
-  font-size: 1rem; 
+  font-size: 1rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
-  white-space: nowrap;
 }
 
 .footer-legal {

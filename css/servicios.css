@@ -335,7 +335,7 @@
 .input-group textarea {
   border: none;
   background: transparent;
-  font-size: 0.95rem;
+  font-size: 1rem; /* 16px minimo: evita que iOS haga zoom automatico al enfocar el campo */
   color: #333;
   font-family: inherit;
   outline: none;
