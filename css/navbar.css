@@ -109,6 +109,24 @@ a, button, .nav-link, .btn-azul, .btn-servicio,
 }
 
 /* =========================================
+   FIX: FOTOS DE LOS HERO EN CELULAR
+   "background-attachment: fixed" renderiza mal en mobile (Safari/iOS
+   sobre todo): la imagen se ve recortada, salta o se reposiciona al
+   scrollear porque la barra de direcciones cambia el alto real de la
+   pantalla. En celular pasamos todos los fondos a "scroll" y usamos
+   una unidad de alto estable (100svh) para que no salte.
+========================================= */
+@media (max-width: 991px) {
+  * {
+    background-attachment: scroll !important;
+  }
+
+  .hero {
+    height: 100svh;
+  }
+}
+
+/* =========================================
    NUEVO FIX: ACHICAR LOGO EN CELULARES
 ========================================= */
 @media (max-width: 768px) {
